@@ -802,7 +802,7 @@ section:nth-child(odd) .animate.scroll,
     max-width: 470px;
     background: linear-gradient(135deg, #00feba, #5b548a);
     color:#fff;
-    margin-top: 125px;
+    margin-top: 80px;
     margin-left: 120px;
     /* margin: 100px auto 0; */
     border-radius: 20px;
