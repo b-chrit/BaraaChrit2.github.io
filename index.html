@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    
     <header class="header">
         <a href="#" class="logo">Baraa. <span class="animate" style="--i:1;"></span></a>
         <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
@@ -329,7 +330,7 @@
             <input type="text" name="_honey" style="display:none;">
             <!-- Disable Captcha -->
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://b-chrit.github.io/BaraaChrit2.github.io/Success.html">
+            <input type="hidden" name="_next" value="https://b-chrit.github.io/BaraaChrit2.github.io/#contact">
             <div class="input-box">
                 <div class="input-field">
                     <input type="text" name="name" placeholder="Full Name" required>
@@ -359,9 +360,14 @@
                 <span class="focus"></span>
                 <span class="animate scroll" style="--i:7;"></span>
             </div>
-
+            
             <div class="btn-box btns">
-                <button type="submit" class="btn">Submit</button>
+                <button type="submit" class="btn" onclick="submitted()">Submit</button>
+                <script>
+                    function submitted(){
+                        alert("successfully submitted!");
+                    }
+                </script>
                 <span class="animate scroll" style="--i:9;"></span>
             </div>
         </form>
