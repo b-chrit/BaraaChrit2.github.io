@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>Baraa Chrit</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">Baraa. <span class="animate" style="--i:1;"></span></a>
+        <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
+        <!-- <div class="container">
+            <h1 id="currentTime"></h1>
+            <script>
+                function updateCurrentTime() {
+                    let time = document.getElementById("currentTime");
+                    let d = new Date();
+                    time.innerHTML = d.toLocaleTimeString();
+                }
+        
+                // Call the function immediately to show the initial time
+                updateCurrentTime();
+        
+                // Update the time every second (1000 milliseconds)
+                setInterval(updateCurrentTime, 1000);
+            </script>
+        </div> -->
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#Education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+            <span class="active-nav"></span>
+            <span class="animate" style="--i:2;"></span>
+        </nav>
+    </header>
+    <section class="home show-animate" id="home">
+        <div class="home-content">
+            <h1>Hi I'm<span> Baraa Chrit</span><span class="animate" style="--i:2;"></span></h1>
+            <div class="text-animate">
+                <h3>Software Engineer</h3>
+                <span class="animate" style="--i:3;"></span>
+            </div>
+            <p>In my second year of pursuing a bachelor's degree in software engineering, my passion for the field
+                drives me. I embrace challenges, dedicating myself to improvement. Beyond classes, I tackle coding
+                projects with determination. Conquering bugs and algorithms fuels my growth. I see limitless potential
+                with each line of code, aiming to contribute to technology's advancement. Software engineering's
+                creativity and innovation inspire me to refine my skills and make a positive impact through code.
+                <span class="animate" style="--i:4;"></span>
+            </p>
+
+            <div class="btn-box">
+                <a href="#" class="btn"
+                    onclick="callAlert('You Can Always Contact Me On Email or use the Contact Me Form below!, My Email: baraaadnan01@gmail.com')">Hire
+                    me</a>
+                <a href="#" class="btn"
+                    onclick="callAlert('You Can Always Contact Me On Email or use the Contact Me Form below!, My Email: baraaadnan01@gmail.com')">Let's
+                    talk</a>
+                <span class="animate" style="--i:5;"></span>
+            </div>
+        </div>
+        <div class="home-sec">
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="https://www.linkedin.com/in/baraa-chrit/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+            <span class="animate" style="--i:6;"></span>
+        </div>
+
+        <div class="imgHover">
+            <!-- <h2 class="heading" id="h2-weather">Check Weather?</h2> -->
+            <div class="card">
+                <div class="search">
+                    <input type="text" placeholder="Enter City for Weather" spellcheck="false">
+                    <button><img src="images/search.png" alt=""></button>
+                </div>
+                <div class="error">
+                    <p>Invalid City Name!</p>
+                </div>
+                <div class="weather">
+                    <img src="images/rain.png" class="weather-icon">
+                    <h1 class="temp">22 °C</h1>
+                    <h2 class="city">Riyadh</h2>
+                    <div class="details">
+                        <div class="col">
+                            <img src=images/humidity.png>
+                            <div>
+                                <p class="humidity">50%</p>
+                                <p>humidity</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <img src=images/wind.png>
+                            <div>
+                                <p class="wind">15 Km/Hr</p>
+                                <p>Wind Speed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                const apiKey = "7d13191ace324073579f4c999586a05a";
+                const apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
+
+                const searchBox = document.querySelector(".search input");
+                const searchBtn = document.querySelector(".search button");
+                const weatherIcon = document.querySelector(".weather-icon");
+                async function checkWeather(city) {
+                    const respone = await fetch(apiUrl + city + `&appid=${apiKey}`);
+                    if (respone.status == 404) {
+                        document.querySelector(".error").style.display = "block";
+                        document.querySelector(".weather").style.display = "none";
+                    } else {
+                        var data = await respone.json();
+
+                        document.querySelector(".city").innerHTML = data.name;
+                        document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
+                        document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+                        document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+
+                        if (data.weather[0].main == "Clouds") {
+                            weatherIcon.src = "images/clouds.png";
+                        } else if (data.weather[0].main == "Clear") {
+                            weatherIcon.src = "images/clear.png";
+                        } else if (data.weather[0].main == "Rain") {
+                            weatherIcon.src = "images/rain.png";
+                        } else if (data.weather[0].main == "Drizzle") {
+                            weatherIcon.src = "images/drizzle.png";
+                        } else if (data.weather[0].main == "Mist") {
+                            weatherIcon.src = "images/mist.png";
+                        }
+
+                        document.querySelector(".weather").style.display = "block";
+                        document.querySelector(".error").style.display = "none";
+                    }
+
+                }
+                searchBtn.addEventListener("click", () => {
+                    checkWeather(searchBox.value);
+                });
+            </script>
+        </div>
+        <span class="animate home-img" style="--i:7;"></span>
+    </section>
+
+    <section class="about" id="about">
+        <h2 class="heading">About <span>Me</span><span class="animate scroll" style="--i:1;"></span></h2>
+        <div class="about-img">
+            <img src="baraaPhoto2.jpg" alt="">
+            <span class="circle-spin"></span>
+            <span class="animate scroll" style="--i:2;"></span>
+        </div>
+        <div class="about-content">
+            <h3>Software Engineer!<span class="animate scroll" style="--i:3;"></span></h3>
+            <p>I'm Baraa Chrit, a second-year software engineering student driven by a fervent passion for coding.
+                Beyond my studies, I embrace coding projects, overcoming challenges and mastering algorithms. Each bug I
+                conquer is a step towards growth. The potential within every line of code fuels my desire to contribute
+                to technological advancement. Fueled by creativity and innovation, I'm committed to refining my skills
+                and making a positive impact through my code. With an eye on the future, I aspire to leverage my
+                dedication to shape the digital world and drive progress as a software engineer.<span
+                    class="animate scroll" style="--i:4;"></span></p>
+            <div class="btn-box btns">
+                <a href="#" class="btn"
+                    onclick="event.preventDefault(); callAlert('Can\'t Blame you I would want to read more about me too, feel free to get in touch to `Read More` about me :)')">Read
+                    More</a>
+                <span class="animate scroll" style="--i:5;"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="Education" id="Education">
+        <h2 class="heading">My <span>Journey</span><span class="animate scroll" style="--i:1;"></span></h2>
+        <div class="education-row">
+            <div class="education-column">
+                <h3 class="title">Education<span class="animate scroll" style="--i:2;"></span></h3>
+                <div class="education-box">
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> 2022 - 2026</div>
+                            <h3>Bachelor's Degree in Software Engineering - Concordia University</h3>
+                            <p>Algorithms and data structures - Programming languages - Software architecture - Database
+                                design</p>
+
+                        </div>
+                    </div>
+
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> 2019 - 2022</div>
+                            <h3>High School</h3>
+                            <p>Mathematics and science
+                                Literature and language arts - Social studies - Introductory computer science</p>
+
+                        </div>
+                    </div>
+
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> 2016 - 2019</div>
+                            <h3>Middle School</h3>
+                            <p>Core subjects: math, language arts, science, history - Building academic foundation -
+                                Reading and writing skills development</p>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="education-column">
+                <h3 class="title">Experience<span class="animate scroll" style="--i:2;"></span></h3>
+                <div class="education-box">
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> 2020- 2021</div>
+                            <h3>School Website Building Team</h3>
+                            <p>Collaborative skills by working with a large team to achieve a common goal.
+                                Project management skills in coordinating tasks, deadlines, and resources.
+                                Web development skills, possibly including coding, design, and content creation.
+                                Problem-solving in overcoming technical challenges during website development.
+                                Understanding the importance of user experience and interface design.</p>
+
+
+                        </div>
+                    </div>
+
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> 2019- 2021</div>
+                            <h3>Cashier at a Local Restaurant:</h3>
+                            <p>Customer service skills in dealing with a diverse range of customers.
+                                Numerical accuracy and attention to detail in handling transactions.
+                                Problem-solving when resolving billing or payment issues.
+                                Multitasking by managing orders, payments, and customer inquiries simultaneously.
+                                Adaptability in a fast-paced and dynamic work environment.</p>
+
+                        </div>
+                    </div>
+
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> 2020- 2022</div>
+                            <h3>Volunteer Work at a Hospital:</h3>
+                            <p>Compassion and empathy in patient interactions.
+                                Communication skills when interacting with patients, families, and hospital staff.
+                                Time management by juggling volunteering with your academic commitments.
+                                Understanding of the healthcare environment and its challenges.
+                                Importance of teamwork and collaboration in a hospital setting.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2 class="heading">My <span>Skills</span><span class="animate scroll" style="--i:1;"></span></h2>
+        <div class="skills-row">
+            <div class="skills-column">
+                <h3 class="title">Coding Skills<span class="animate scroll" style="--i:2;"></span></h3>
+                <div class="skills-box">
+                    <div class="skills-content">
+                        <div class="progress">
+                            <h3>HTML <span>90%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>CSS <span>80%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>JavaScript <span>75%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Python <span>65%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+                    </div>
+                    <span class="animate scroll" style="--i:3;"></span>
+                </div>
+            </div>
+
+            <div class="skills-column">
+                <h3 class="title">Professional Skills<span class="animate scroll" style="--i:5;"></span></h3>
+                <div class="skills-box">
+                    <div class="skills-content">
+                        <div class="progress">
+                            <h3>Web Design <span>95%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Web Development <span>67%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Graphic Design <span>85%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>SEO Marketing <span>60%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+                    </div>
+                    <span class="animate scroll" style="--i:6;"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me!</span><span class="animate scroll" style="--i:1;"></span></h2>
+        <form action="https://formsubmit.co/6d54e0625840cfbd68a39a45e51d6d06" method="POST">
+            <!-- Honey input -->
+            <input type="text" name="_honey" style="display:none;">
+            <!-- Disable Captcha -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://b-chrit.github.io/BaraaChrit2.github.io/Success.html">
+            <div class="input-box">
+                <div class="input-field">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <span class="focus"></span>
+                </div>
+                <div class="input-field">
+                    <input type="text" name="Email" placeholder="Email Address" required>
+                    <span class="focus"></span>
+                </div>
+                <span class="animate scroll" style="--i:3;"></span>
+            </div>
+
+            <div class="input-box">
+                <div class="input-field">
+                    <input type="number"  name="PhoneNumber" placeholder="Phone Number" required>
+                    <span class="focus"></span>
+                </div>
+                <div class="input-field">
+                    <input type="text" name="Email Subject" placeholder="Email Subject" required>
+                    <span class="focus"></span>
+                </div>
+                <span class="animate scroll" style="--i:5;"></span>
+            </div>
+
+            <div class="textarea-field">
+                <textarea name="Message" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <span class="focus"></span>
+                <span class="animate scroll" style="--i:7;"></span>
+            </div>
+
+            <div class="btn-box btns">
+                <button type="submit" class="btn">Submit</button>
+                <span class="animate scroll" style="--i:9;"></span>
+            </div>
+        </form>
+        <br><br>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 by Baraa Chrit | All rights reserved.</p>
+            <span class="animate scroll" style="--i:1;"></span>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+            <span class="animate scroll" style="--i:3;"></span>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function callAlert(message) {
+            alert(message, 10000);
+        }
+    </script>
+</body>
+
+</html>
