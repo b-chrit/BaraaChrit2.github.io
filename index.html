@@ -30,7 +30,7 @@
                 setInterval(updateCurrentTime, 1000);
             </script>
         </div> -->
-        
+
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
@@ -57,8 +57,12 @@
             </p>
 
             <div class="btn-box">
-                <a href="#" class="btn" onclick="callAlert('You Can Always Contact Me On Email or use the Contact Me Form below!, My Email: baraaadnan01@gmail.com')">Hire me</a>
-                <a href="#" class="btn" onclick="callAlert('You Can Always Contact Me On Email or use the Contact Me Form below!, My Email: baraaadnan01@gmail.com')">Let's talk</a>
+                <a href="#" class="btn"
+                    onclick="callAlert('You Can Always Contact Me On Email or use the Contact Me Form below!, My Email: baraaadnan01@gmail.com')">Hire
+                    me</a>
+                <a href="#" class="btn"
+                    onclick="callAlert('You Can Always Contact Me On Email or use the Contact Me Form below!, My Email: baraaadnan01@gmail.com')">Let's
+                    talk</a>
                 <span class="animate" style="--i:5;"></span>
             </div>
         </div>
@@ -163,7 +167,9 @@
                 dedication to shape the digital world and drive progress as a software engineer.<span
                     class="animate scroll" style="--i:4;"></span></p>
             <div class="btn-box btns">
-                <a href="#" class="btn" onclick="event.preventDefault(); callAlert('Can\'t Blame you I would want to read more about me too, feel free to get in touch to `Read More` about me :)')">Read More</a>
+                <a href="#" class="btn"
+                    onclick="event.preventDefault(); callAlert('Can\'t Blame you I would want to read more about me too, feel free to get in touch to `Read More` about me :)')">Read
+                    More</a>
                 <span class="animate scroll" style="--i:5;"></span>
             </div>
         </div>
@@ -319,6 +325,10 @@
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span><span class="animate scroll" style="--i:1;"></span></h2>
         <form action="https://formsubmit.co/6d54e0625840cfbd68a39a45e51d6d06" method="POST">
+            <!-- Honey input -->
+            <input type="text" name="_honey" style="display:none;">
+            <!-- Disable Captcha -->
+            <input type="hidden" name="_captcha" value="false">
             <div class="input-box">
                 <div class="input-field">
                     <input type="text" placeholder="Full Name" required>
@@ -369,11 +379,11 @@
     </footer>
     <script src="script.js"></script>
     <script src="script.js"></script>
-            <script>
-                    function callAlert(message){
-                        alert(message,10000);
-                    }
-                </script>
+    <script>
+        function callAlert(message) {
+            alert(message, 10000);
+        }
+    </script>
 </body>
 
 </html>
