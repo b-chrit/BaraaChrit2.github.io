@@ -7,6 +7,7 @@ menuIcon.onclick= ()=>{
     navBar.classList.toggle('active');
 }
 
+
 window.onscroll = () => {
     sections.forEach(sec => {
         let top = window.scrollY;
@@ -72,3 +73,4 @@ window.alert=function(message, timeout=null){
     }
     alert.appendChild(alertButton);
 }
+

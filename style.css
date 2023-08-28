@@ -21,8 +21,6 @@
     --text-color:#4e4001;
     --main-color:#b16259;
 }
-
-
 html{
     font-size:62.5%;
     overflow-x: hidden;
@@ -82,7 +80,7 @@ section{
     display: flex;
     align-items: center;
     padding:0 9%;
-    background: url("photo-1593005510329-8a4035a7238f.jpeg") no-repeat;
+    background: url("images/goldenBackground.jpeg") no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -620,7 +618,6 @@ span{
     #menu-icon{
         display:block;
     }
-
     .navbar{
         position: absolute;
         top:100%;
@@ -670,7 +667,6 @@ span{
         pointer-events: none;
     }
 }
-
 @media(max-width: 520px){
     html{
         font-size: 50%;
@@ -686,7 +682,6 @@ span{
         width:38px;
         height:38px;
     }
-
 }
 @media(max-width: 462px){
     .home-content h1{
