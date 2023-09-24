@@ -15,7 +15,8 @@
         <button id="close">&times;</button>
         <h1>WAIT🫵✋</h1>
         <p>While you're exploring my website, I'd like to take a moment to invite you to check out my GitHub profile for
-            a collection of even more exciting projects!(it will open in a new tab so you can continue exploring this website 😉)</p>
+            a collection of even more exciting projects!(it will open in a new tab so you can continue exploring this
+            website 😉)</p>
         <a href="https://github.com/b-chrit" target="_blank" class="popupClass">Let's go</a>
     </div>
     <script>
@@ -28,6 +29,9 @@
             )
         });
         document.querySelector("#close").addEventListener("click", function () {
+            document.querySelector(".popup").style.display = "none";
+        });
+        document.querySelector("a[href='https://github.com/b-chrit']").addEventListener("click", function () {
             document.querySelector(".popup").style.display = "none";
         });
     </script>
