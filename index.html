@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,28 @@
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
-    
+    <div class="popup">
+        <button id="close">&times;</button>
+        <h1>WAIT🫵✋</h1>
+        <p>While you're exploring my website, I'd like to take a moment to invite you to check out my GitHub profile for
+            a collection of even more exciting projects!(it will open in a new tab so you can continue exploring this website 😉)</p>
+        <a href="https://github.com/b-chrit" target="_blank" class="popupClass">Let's go</a>
+    </div>
+    <script>
+        window.addEventListener("load", function () {
+            setTimeout(
+                function open(event) {
+                    document.querySelector(".popup").style.display = "block";
+                },
+                3000
+            )
+        });
+        document.querySelector("#close").addEventListener("click", function () {
+            document.querySelector(".popup").style.display = "none";
+        });
+    </script>
     <header class="header">
         <a href="#" class="logo">Baraa. <span class="animate" style="--i:1;"></span></a>
         <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
@@ -21,10 +42,10 @@
                     let d = new Date();
                     time.innerHTML = d.toLocaleTimeString();
                 }
-        
+
                 // Call the function immediately to show the initial time
                 updateCurrentTime();
-        
+
                 // Update the time every second (1000 milliseconds)
                 setInterval(updateCurrentTime, 1000);
             </script>
@@ -345,7 +366,7 @@
 
             <div class="input-box">
                 <div class="input-field">
-                    <input class="userPhone" type="number"  name="PhoneNumber" placeholder="Phone Number" required>
+                    <input class="userPhone" type="number" name="PhoneNumber" placeholder="Phone Number" required>
                     <span class="focus"></span>
                 </div>
                 <div class="input-field">
@@ -356,11 +377,12 @@
             </div>
 
             <div class="textarea-field">
-                <textarea class="message" name="Message" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <textarea class="message" name="Message" id="" cols="30" rows="10" placeholder="Your Message"
+                    required></textarea>
                 <span class="focus"></span>
                 <span class="animate scroll" style="--i:7;"></span>
             </div>
-            
+
             <div class="btn-box btns">
                 <button type="submit" class="btn" onclick="submitted()">Submit</button>
                 <script>
@@ -374,10 +396,10 @@
                         ) {
                             alert("Successfully submitted!", 10000);
                         } else {
-                            alert("Make sure to fill all the required fields!",10000);
+                            alert("Make sure to fill all the required fields!", 10000);
                         }
                     }
-                
+
                     function areAllFieldsFilled(className) {
                         var elements = document.getElementsByClassName(className);
                         for (var i = 0; i < elements.length; i++) {
@@ -388,9 +410,9 @@
                         return true; // All fields are filled
                     }
                 </script>
-                
-                
-                
+
+
+
                 <span class="animate scroll" style="--i:9;"></span>
             </div>
         </form>
@@ -414,4 +436,5 @@
         }
     </script>
 </body>
+
 </html>
